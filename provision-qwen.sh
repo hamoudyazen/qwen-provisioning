@@ -18,6 +18,7 @@ else
   exit 1
 fi
 
+export COMFY_DIR
 echo "Using ComfyUI directory: $COMFY_DIR"
 
 # Activate Vast's standard Python environment when present.
@@ -49,7 +50,7 @@ import boto3
 from botocore.config import Config
 from botocore.exceptions import ClientError
 
-comfy = Path(os.environ.get("COMFY_DIR", "/workspace/ComfyUI"))
+comfy = Path(os.environ["COMFY_DIR"])
 bucket = os.environ["R2_BUCKET"]
 prefix = "qwen-image-2512/"
 
@@ -129,4 +130,3 @@ for folder, filename, url in models:
     print(f"Ready: {destination} ({destination.stat().st_size:,} bytes)", flush=True)
 
 print("=== All Qwen-Image-2512 model files are ready ===", flush=True)
-PY
