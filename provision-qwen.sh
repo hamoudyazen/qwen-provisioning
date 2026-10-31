@@ -67,7 +67,7 @@ models = [
     (
         "diffusion_models",
         "qwen_image_2512_fp8_e4m3fn.safetensors",
-        "https://huggingface.co/Comfy-Org/Qwen-Image/resolve/main/split_files/diffusion_models/qwen_image_2512_fp8_e4m3fn.safetensors",
+        "https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_2512_fp8_e4m3fn.safetensors",
     ),
     (
         "text_encoders",
