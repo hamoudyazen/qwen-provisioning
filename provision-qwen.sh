@@ -130,3 +130,9 @@ for folder, filename, url in models:
     print(f"Ready: {destination} ({destination.stat().st_size:,} bytes)", flush=True)
 
 print("=== All Qwen-Image-2512 model files are ready ===", flush=True)
+
+# Provisioning can run after Supervisor starts. Refresh ComfyUI if it is
+# already running so its model loaders discover the newly installed weights.
+if command -v supervisorctl >/dev/null 2>&1 && supervisorctl status comfyui >/dev/null 2>&1; then
+  supervisorctl restart comfyui
+fi
